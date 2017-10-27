@@ -1,0 +1,47 @@
+{
+    "name": "ex7_JS_unitTesting_mocha_chai_istanbul",
+    "version": "1.0.0",
+    "description": "Using\r + Mocha - JS Unit testing runner\r + Chai - JS assertion library, that is better than 'assert' lib that comes default with nodeJs + Istanbul, JS code coverage lib + nyc, istanbul's command line tool",
+    "main": "index.js",
+    "scripts": {
+        "cleanCoverageDirs": "rm -rf .nyc_output coverage",
+
+        "test": "npm run testAndCoverage",
+
+        "testOnly": "npm run test_mocha_all",
+
+        "test_mocha_testDirOnly": "mocha",
+        "test_mocha_all": "mocha --recursive",
+        "test_mocha_all_TDD_asWellAs_BDD": "mocha --recursive --ui tdd",
+
+        "testAndCoverage": "npm run testAndCoverage_via_istanbul && npm run testAndCoverage_via_nyc",
+
+        "testAndCoverage_via_nyc": "nyc mocha --recursive",
+        "testAndCoverage_via_nyc_TDD_asWellAs_BDD": "nyc mocha --recursive --ui tdd",
+
+        "testAndCoverage_via_istanbul": "istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive",
+        "testCoverage_via_istanbul_2": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive",
+        "testAndCoverage_via_istanbul_DONTwork": "istanbul cover _mocha",
+
+        "checkCoverage": "npm run checkCoverage_perFile_nyc",
+        "checkCoverage_overAll_nyc_defaults": "nyc check-coverage || true",
+        "checkCoverage_overAll_nyc": "nyc check-coverage --lines 90 --functions 95 --branches 85 || true",
+        "checkCoverage_perFile_nyc": "nyc check-coverage --lines 90 --functions 95 --branches 85 --per-file || true",
+        "checkCoverage_perFile_istanbul": "istanbul check-coverage --lines 90 --functions 95 --branches 85 --per-file || true",
+
+        "openCoverageReport": "npm run openCoverageReport_inBrowser",
+        "openCoverageReport_inShell_via_nyc": "nyc report",
+        "openCoverageReport_inBrowser": "opn coverage/lcov-report/index.html",
+
+        "testAndCoverageAndReport": "npm run testAndCoverage && npm run openCoverageReport"
+    },
+    "keywords": ["chai", "istanbul", "mocha", "nyc", "opn-cli", "unit test"],
+    "author": "ilker kiris",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "istanbul": "^0.4.5",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1"
+    }
+}
