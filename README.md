@@ -1,4 +1,6 @@
 # JS Unit testing 'Hello World' with Mocha and Chai and Istanbul
+Example project for JS Unit testing 'Hello World' with Mocha and Chai and unit test coverage with Istanbul and nyc.
+
 Using
 + Mocha - JS Unit test runner, to unit test in. It supports BDD(default), TDD, Exports, QUnit and Require style interfaces. By default it looks for unit test files ./test/*.js or ./test/*.coffee.  
 + Chai - JS assertion library, that is better than 'assert' lib that comes default with nodeJs
