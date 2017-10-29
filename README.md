@@ -65,7 +65,19 @@ Will add
     - *describe* is keyword for behavior
     - *it* is keyword for specification
 
-## Setup
+# Setup from fork/clone
++ 1st fork this project, then clone your fork
++ clone project (in below example using this project's github repo)
+```
+cd /c/fdu/csci3444/projects
+git clone https://github.com/fdu-csci3444/ex7_nodeJS_unitTesting_mocha_chai_istanbul.git
+```
++ install dependencies that are declared in package.json
+```
+npm install
+```
+
+## Setup from scratch
 + Create project dir
 ```
 mkdir -p /c/fdu/csci3444/projects/ex7_JS_unitTesting_mocha_chai_istanbul
